@@ -1,0 +1,41 @@
+.about {
+  background-color: #ffffff;
+  height: 366px;
+
+  &__block {
+    padding: 150px 0 0 106px;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    /* grid-template-rows: max-content; */
+    /* grid-auto-flow: row; */
+    -moz-column-gap: 225px;
+    column-gap: 225px;
+  }
+
+  &__title {
+    height: fit-content;
+    max-width: 98px;
+    width: 100%;
+    font-family: "Larsseit";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.06em;
+
+    color: #22356f;
+  }
+
+  &__text {
+    max-width: 592px;
+    width: 100%;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.005em;
+
+    color: #22356f;
+  }
+}

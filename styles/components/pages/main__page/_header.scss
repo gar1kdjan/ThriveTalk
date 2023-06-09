@@ -1,0 +1,71 @@
+.header {
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    z-index: 2;
+    position: relative;
+  }
+  &__name {
+    margin: 27px 0px 0px 0px;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 23px;
+
+    letter-spacing: -0.035em;
+
+    color: #62d0df;
+  }
+  &__block {
+    margin: 27px 0px 0px 0px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+  &__nav-pos {
+    display: flex;
+    width: fit-content;
+
+    align-items: center;
+  }
+
+  //навигация
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 233px;
+
+    &-li {
+      font-family: "Larsseit";
+      font-style: italic;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 17px;
+
+      color: #22356f;
+
+      &:hover {
+        margin-bottom: 3px;
+        border-bottom: solid 1px #22356f;
+      }
+    }
+  }
+
+  &__btn {
+    background: #62d0df;
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+  }
+}

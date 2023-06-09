@@ -1,0 +1,64 @@
+.contact {
+  background: #22356f;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+
+    color: #ffffff;
+  }
+
+  &__name {
+    margin: 230px 0 61px 0;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 80px;
+    letter-spacing: -0.01em;
+
+    color: #ffffff;
+  }
+
+  &__text {
+    margin-bottom: 57px;
+    max-width: 579px;
+    width: 100%;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 56px;
+    letter-spacing: -0.005em;
+
+    color: #ffffff;
+  }
+
+  &__help {
+    height: 43px;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+
+    letter-spacing: 0.1em;
+
+    color: #62d0df;
+  }
+  &__img {
+    width: fit-content;
+    height: 800px;
+    overflow: hidden;
+  }
+}

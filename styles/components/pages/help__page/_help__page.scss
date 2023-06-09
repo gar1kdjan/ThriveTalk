@@ -1,0 +1,58 @@
+@import "../../pages/help__page/cards/cards";
+
+.helped {
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 480px 676px;
+
+    column-gap: 106px;
+  }
+
+  &__img {
+    width: 480px;
+    height: 800px;
+  }
+  &__content {
+    margin-top: 103px;
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+  }
+
+  &__title {
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 13px;
+    letter-spacing: 0.06em;
+
+    color: #22356f;
+  }
+
+  &__text {
+    margin: 225px 0 152px 0;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 45px;
+    letter-spacing: -0.01em;
+
+    color: #22356f;
+    &-bl {
+      color: #6cd3e1;
+    }
+  }
+  &__link {
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.1em;
+
+    color: #fab63e;
+  }
+}

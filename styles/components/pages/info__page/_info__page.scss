@@ -1,0 +1,48 @@
+.info {
+  background: #62d0df;
+  height: 604px;
+
+  &__block {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, max-content);
+  }
+
+  &__title {
+    padding: 151px 0 75px 0;
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 23px;
+    letter-spacing: -0.006em;
+
+    color: #ffffff;
+  }
+
+  &__text {
+    max-width: 555px;
+    width: 100%;
+    font-family: "Larsseit";
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 31px;
+
+    color: #ffffff;
+  }
+
+  &__text-reg {
+    font-family: "Larsseit";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+
+    color: #ffffff;
+  }
+  &__img {
+    max-width: 525px;
+    width: 100%;
+  }
+}
