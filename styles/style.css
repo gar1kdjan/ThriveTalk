@@ -445,7 +445,7 @@ a:active {
   background-color: #0052c1;
 }
 .cards__item:nth-child(3) {
-  background-image: url(/styles/images/jpg/3.jpg);
+  background-image: url(../styles/images/jpg/3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
