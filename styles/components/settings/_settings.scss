@@ -63,7 +63,7 @@ button {
 }
 a {
   outline: none;
-  // color: $color_1;
+  color: $color_1;
   text-decoration: none;
   &:link {
     outline: none;
@@ -85,8 +85,4 @@ a {
     color: $color_1;
     text-decoration: none;
   }
-}
-
-.container {
-  margin-left: 178px;
 }

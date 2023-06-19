@@ -1,3 +1,5 @@
+@import "../../../settings/sizes";
+
 .help {
   &__title {
     margin-bottom: 24px;
@@ -20,6 +22,9 @@
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    @media (max-width: $xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
@@ -90,6 +95,9 @@
     list-style-type: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    @media (max-width: $xl) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
@@ -104,7 +112,7 @@
     }
 
     &:nth-child(3) {
-      background-image: url(styles/images/jpg/3.jpg);
+      background-image: url(../styles/images/jpg/3.jpg);
       background-size: cover;
       background-repeat: no-repeat;
     }
@@ -161,6 +169,9 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  @media (max-width: $xl) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   &-block {
     margin-top: 22px;

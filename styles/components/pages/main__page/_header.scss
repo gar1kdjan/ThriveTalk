@@ -1,3 +1,5 @@
+@import "../../settings/sizes";
+
 .header {
   &__grid {
     display: grid;
@@ -20,13 +22,87 @@
   &__block {
     margin: 27px 0px 0px 0px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    // grid-template-columns: 2fr 1fr;
+    grid-auto-flow: column;
+    @media (max-width: $md) {
+      align-items: center;
+    }
   }
   &__nav-pos {
     display: flex;
     width: fit-content;
 
     align-items: center;
+  }
+
+  &__menu__mob {
+    display: none;
+    @media (max-width: $md) {
+      display: block;
+    }
+    @media (max-width: $md) {
+      width: 24px;
+    }
+    &.active {
+      & svg {
+        & g {
+          &:first-child {
+            opacity: 0;
+            & line {
+              transition: transform 0.2s;
+              &:first-child {
+                transform: translateY(7px);
+              }
+              &:last-child {
+                transform: translateY(-7px);
+              }
+            }
+          }
+          &:last-child {
+            opacity: 1;
+            & line {
+              transition: transform 0.2s 0.2s;
+              &:first-child {
+                transform: rotate(45deg);
+              }
+              &:last-child {
+                transform: rotate(-45deg);
+              }
+            }
+          }
+        }
+      }
+    }
+    & svg {
+      stroke: #404040;
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      @media (max-width: $lg) {
+        width: 28px;
+        height: 28px;
+      }
+      & g {
+        &:first-child {
+          opacity: 1;
+          transition: opacity 0s 0.2s;
+          & line {
+            transition: transform 0.2s 0.2s;
+            transform: translateY(0px);
+          }
+        }
+        &:last-child {
+          opacity: 0;
+          transition: opacity 0s 0.2s;
+          & line {
+            transition: transform 0.2s;
+            transform: rotate(0deg);
+            transform-origin: center;
+          }
+        }
+      }
+    }
   }
 
   //навигация
@@ -36,7 +112,9 @@
     align-items: center;
     justify-content: space-between;
     width: 233px;
-
+    @media (max-width: $md) {
+      display: none;
+    }
     &-li {
       font-family: "Larsseit";
       font-style: italic;
