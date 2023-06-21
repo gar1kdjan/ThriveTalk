@@ -1,13 +1,32 @@
+@import "../../settings/sizes";
+
 .footer {
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(2, max-content);
 
     column-gap: 60px;
+
+    @media (max-width: $xl) {
+      column-gap: 10px;
+
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: $lg) {
+      margin-left: 50px;
+      display: flex;
+      justify-content: flex-start;
+    }
+    @media (max-width: $xs) {
+      margin-left: 10px;
+    }
   }
   &__img {
     max-width: 570px;
     width: 100%;
+    @media (max-width: $lg) {
+      display: none;
+    }
   }
 
   &__block {
@@ -15,6 +34,23 @@
     margin-top: 98px;
     display: grid;
     grid-template-columns: repeat(3, max-content);
+    @media (max-width: $xl) {
+      margin-top: 10px;
+      column-gap: 0px;
+      width: fit-content;
+    }
+    @media (max-width: $md) {
+      display: inline-block;
+    }
+  }
+
+  &__content {
+    @media (max-width: $lg) {
+      margin-bottom: 20px;
+    }
+    @media (max-width: $md) {
+      margin-bottom: 0px;
+    }
   }
   &__text {
     font-family: "Larsseit";
@@ -25,6 +61,10 @@
     letter-spacing: -0.006em;
 
     color: rgba(34, 53, 111, 0.5);
+
+    @media (max-width: $lg) {
+      line-height: 20px;
+    }
   }
   &__title {
     max-width: 240px;
@@ -48,6 +88,23 @@
     background: #ffffff;
 
     box-shadow: inset -1px 0px 0px rgba(0, 0, 0, 0.1);
+
+    @media (max-width: $xl) {
+      width: 200px;
+      margin-right: 20px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: $md) {
+      width: 200px;
+      box-shadow: none;
+      padding: 11px 0px 0px 0;
+      margin-right: 0px;
+    }
+
+    @media (max-width: $sm) {
+      height: 150px;
+    }
   }
   &__contact {
     margin-top: 20px;
