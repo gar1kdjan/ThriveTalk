@@ -1,5 +1,9 @@
 @import "../../settings/sizes";
 
+.open {
+  display: flex !important;
+}
+
 .header {
   &__grid {
     display: grid;
@@ -22,86 +26,12 @@
   &__block {
     margin: 27px 0px 0px 0px;
     display: grid;
-    // grid-template-columns: 2fr 1fr;
+
     grid-auto-flow: column;
-    @media (max-width: $md) {
-      align-items: center;
-    }
-  }
-  &__nav-pos {
-    display: flex;
-    width: fit-content;
-
-    align-items: center;
-  }
-
-  &__menu__mob {
-    display: none;
-    @media (max-width: $md) {
-      display: block;
-    }
-    @media (max-width: $md) {
-      width: 24px;
-    }
-    &.active {
-      & svg {
-        & g {
-          &:first-child {
-            opacity: 0;
-            & line {
-              transition: transform 0.2s;
-              &:first-child {
-                transform: translateY(7px);
-              }
-              &:last-child {
-                transform: translateY(-7px);
-              }
-            }
-          }
-          &:last-child {
-            opacity: 1;
-            & line {
-              transition: transform 0.2s 0.2s;
-              &:first-child {
-                transform: rotate(45deg);
-              }
-              &:last-child {
-                transform: rotate(-45deg);
-              }
-            }
-          }
-        }
-      }
-    }
-    & svg {
-      stroke: #404040;
-      transition: 0.2s ease-in-out;
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      @media (max-width: $lg) {
-        width: 28px;
-        height: 28px;
-      }
-      & g {
-        &:first-child {
-          opacity: 1;
-          transition: opacity 0s 0.2s;
-          & line {
-            transition: transform 0.2s 0.2s;
-            transform: translateY(0px);
-          }
-        }
-        &:last-child {
-          opacity: 0;
-          transition: opacity 0s 0.2s;
-          & line {
-            transition: transform 0.2s;
-            transform: rotate(0deg);
-            transform-origin: center;
-          }
-        }
-      }
+    @media (max-width: $lg) {
+      margin-right: 50px;
+      justify-content: flex-end;
+      display: flex;
     }
   }
 
@@ -112,10 +42,28 @@
     align-items: center;
     justify-content: space-between;
     width: 233px;
-    @media (max-width: $md) {
+    transition: all 0.3s ease;
+
+    @media (max-width: $lg) {
       display: none;
+      flex-direction: column;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      overflow-y: auto;
+      padding: 50px 40px;
+      background: #f4f9e2;
+      animation: burgerAnimation 0, 0.4s;
+
+      overflow: hidden;
     }
-    &-li {
+
+    li {
       font-family: "Larsseit";
       font-style: italic;
       font-weight: 400;
@@ -124,9 +72,23 @@
 
       color: #22356f;
 
+      transition: all 0.3s ease;
+
       &:hover {
         margin-bottom: 3px;
         border-bottom: solid 1px #22356f;
+      }
+    }
+
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transition: all 0.3s ease;
+
+      @media (max-width: $lg) {
+        flex-direction: column;
+        row-gap: 30px;
       }
     }
   }
@@ -145,5 +107,60 @@
     align-items: center;
     justify-content: center;
     color: #ffffff;
+
+    @media (max-width: $lg) {
+      display: none;
+    }
   }
+}
+
+.burger {
+  display: none;
+  @media (max-width: $lg) {
+    display: flex;
+
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background: #62d0df;
+      transform: all 0.3s ease 0s;
+    }
+
+    &::before {
+      top: 0;
+    }
+    &::after {
+      bottom: 0;
+    }
+
+    span {
+      height: 2px;
+      width: 80%;
+      transform: scale(1);
+      background-color: #62d0df;
+    }
+  }
+}
+
+.burger.active span {
+  transform: scale(0);
+}
+
+.burger.active::before {
+  top: 50%;
+  transform: rotate(-50deg) translate(0, -50%);
+}
+
+.burger.active::after {
+  top: 50%;
+  transform: rotate(50deg) translate(0, 50%);
 }

@@ -19,6 +19,7 @@
   width: fit-content;
   @media (max-width: $lg) {
     grid-template-columns: none;
+    z-index: 0;
   }
   @media (max-width: $sm) {
     margin-top: 50px;
@@ -27,6 +28,7 @@
   &__name {
     margin: 0 0 41px;
     @media (max-width: $sm) {
+      display: none;
       margin-bottom: 30px;
     }
   }
@@ -89,7 +91,7 @@
     align-items: center;
     @media (max-width: $md) {
       width: 300px;
-      margin-bottom: 10px;
+      margin-bottom: 40px;
     }
     @media (max-width: $md) {
       width: 270px;
